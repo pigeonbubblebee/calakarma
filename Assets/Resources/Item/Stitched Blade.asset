@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9543c79d10dc6e4eb6996389a33ceb9, type: 3}
+  m_Name: Stitched Blade
+  m_EditorClassIdentifier: 
+  id: stitched_blade
+  itemType: 0
+  itemTier: 1
+  maxStack: 1
+  itemImage: {fileID: 21300000, guid: 2b0763ffe4ab7c04dbf02cb47afdfce7, type: 3}
+  itemImageInWorld: {fileID: 21300000, guid: 59585911686c24743a0462b6fb41b4bb, type: 3}
+  damage: 4
+  speed: 0.5
+  chargeSpeed: 0.1
+  otherAttributes: []
+  weaponType: 0
+  weaponDamageType: 0
+  weaponAnimator: {fileID: 22100000, guid: 21a466a3f7d442c47afe9c449bf0f87f, type: 2}
+  reach: 0.9
+  hitRad: 0.5
+  charge100PercentSpeed: 0.5
+  chargeDamage: 7

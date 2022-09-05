@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4df69146476b3b146bae5225e83bf26f, type: 3}
+  m_Name: Wild Spirit
+  m_EditorClassIdentifier: 
+  id: wild_spirit
+  itemType: 2
+  itemTier: 3
+  maxStack: 1
+  itemImage: {fileID: 21300000, guid: 4570b6b4cca5c1f43a34502eb15e8a65, type: 3}
+  itemImageInWorld: {fileID: 21300000, guid: 4cce6b5b04ff0ee45ae839fa9d1f283b, type: 3}
+  emotionBasic: 0
+  emotionMoving: 1
+  emotionPrimal: 1
+  emotionFinal: 0
+  otherAttributes: []
+  otherAttributesBasic:
+  - bleedingdmg;1
+  - bleedingdmgrte;1
+  - bleedinglngth;3
+  otherAttributesMoving:
+  - bleedingdmg;1
+  - bleedingdmgrte;1
+  - bleedinglngth;3
+  otherAttributesPrimal:
+  - bleedingdmg;1
+  - bleedingdmgrte;1
+  - bleedinglngth;3
+  - ruptureddmgbonus;10
+  - rupturedlngth;3
+  otherAttributesFinal:
+  - bleedingdmg;1
+  - bleedingdmgrte;1
+  - bleedinglngth;3
+  - ruptureddmgbonus;10
+  - rupturedlngth;3
+  - bloodcurseddmg;3
+  - bloodcurseddmgrte;0.6
+  - bloodcurseddefred;20
+  - bloodcurseddmgred;20
+  - bloodcursedlngth;3
+  observationLevel: 0
+  bleeding: {fileID: 11400000, guid: 33abddffcff765b4aa7d7d3a31d0cbae, type: 2}
+  ruptured: {fileID: 11400000, guid: a08d7a5241b5c0644a9bd1883e291d7f, type: 2}
+  bloodCurse: {fileID: 11400000, guid: 8b8213af10e75db4abdc204e7d7ae0e4, type: 2}
+  bleedingLength: 3
+  rupturedLength: 3
+  bloodCurseLength: 3

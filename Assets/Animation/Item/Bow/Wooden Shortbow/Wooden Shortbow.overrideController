@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Wooden Shortbow
+  m_Controller: {fileID: 9100000, guid: 4d2cf0cafe748e249bd86d69bd5d65d3, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: a14daf0c8987c564cbcbfab7c472efe8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a14daf0c8987c564cbcbfab7c472efe8, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 33614a3b2a26a8a42bf2d2ce9fa6c744, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 33614a3b2a26a8a42bf2d2ce9fa6c744, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: cdebef0f008a91f41b8b2ed02b9abf35, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: cdebef0f008a91f41b8b2ed02b9abf35, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b66b04d9f3c49d441ab5f075d99d3087, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b66b04d9f3c49d441ab5f075d99d3087, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: a79075e1e0bf6fc4eb32fffa38ee88da, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a79075e1e0bf6fc4eb32fffa38ee88da, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: fa3ec7b59f26b0943b71e0f11e45d502, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: fa3ec7b59f26b0943b71e0f11e45d502, type: 2}

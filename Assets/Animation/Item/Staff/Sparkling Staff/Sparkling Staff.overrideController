@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sparkling Staff
+  m_Controller: {fileID: 9100000, guid: 79ef4116a3e3337479327d8296516a1d, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 9463230e20fc1ed498784aac7a88ed57, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 9463230e20fc1ed498784aac7a88ed57, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b4c88714434436b488ffef949490807a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b4c88714434436b488ffef949490807a, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 807023cae44890e46adca9e5cce86bf7, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 807023cae44890e46adca9e5cce86bf7, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 194748afa898ccc41b432e391e77539a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 194748afa898ccc41b432e391e77539a, type: 2}

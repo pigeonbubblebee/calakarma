@@ -1,0 +1,33 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MagicProjectile : Projectile
+{
+    // Magic Proj Base On Hit Functionality
+    public override void onCollision(Collision2D collision)
+    {
+        if(collision.gameObject.layer == Layers.groundLayer || collision.gameObject.layer == Layers.enemyLayer) { // Checks Ground And Enemy Layer
+            rb.velocity = Vector2.zero; // Cancels All Velocity
+            if(collision.gameObject.layer == Layers.enemyLayer) { // Deals Damage To Enemy
+                onHit(collision.gameObject);
+                playerMementoEffects(collision);
+            }
+            Destroy(this.gameObject); // Terminate This Projectile's GameObject
+        }
+    }
+
+    // Overrode Method
+    // Deals Appropriate Damage To An Enemy Entity
+    public virtual void onHit(GameObject enemy) {
+        enemy.GetComponent<Enemy>().takeDamage(damage);
+    }
+
+    private void playerMementoEffects(Collision2D collision) {
+        PlayerMemento p = Player.Instance.playerMemento;
+        foreach(Item i in p.getEquippedMementos()) {
+            if(i!=null)
+                ((MementoData) (i.getItemData())).onMagicProjectileCollision(collision, Player.Instance.playerMemento.getEmotionLevel(i.getItemData().id));
+        }
+    }
+}
