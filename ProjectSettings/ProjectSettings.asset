@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: Pigeon Games
+  companyName: Pugeon Games
   productName: Calakarma
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
