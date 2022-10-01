@@ -1,4 +1,4 @@
-
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -63,7 +63,10 @@ public class PlayerStats : MonoBehaviour
     public HorizontalBar healthBar;
     public SpecialBar specialBar;
 
-    public Dictionary<string, int> statBonuses = new Dictionary<string, int>();
+    public Dictionary<string, int> mementoStatBonuses = new Dictionary<string, int>();
+    public Dictionary<string, int> jewelryStatBonuses = new Dictionary<string, int>();
+
+    Dictionary<string, int> statBonuses = new Dictionary<string, int>();
 
     // Applies Damage To Player
     public void takeDamage(int damage) {
@@ -75,6 +78,37 @@ public class PlayerStats : MonoBehaviour
             Save.AutoSave();
         }
         resetStealth();
+    }
+
+    public void setMementoStatBonuses(Dictionary<string, int> x) {
+        mementoStatBonuses = x;
+
+        statBonuses = mementoStatBonuses;
+
+        foreach(string key in jewelryStatBonuses.Keys) {
+            addToStat(key, x[key], statBonuses);
+        }
+    }
+
+    public void setJewelryStatBonuses(Dictionary<string, int> x) {
+        jewelryStatBonuses = x;
+
+        statBonuses = mementoStatBonuses;
+
+        foreach(string key in jewelryStatBonuses.Keys) {
+            addToStat(key, x[key], statBonuses);
+        }
+    }
+
+    void addToStat(string name, int amount, Dictionary<string, int> statBonuses) {
+        try
+        {
+            statBonuses.Add(name, amount);
+        }
+        catch (ArgumentException)
+        {
+            statBonuses[name] = statBonuses[name]+amount;
+        }
     }
 
     // Updates Stats Based On Regeneration Rates And Updates UI
@@ -208,7 +242,7 @@ public class PlayerStats : MonoBehaviour
 
     private void updateStatBonuses() {
         maxHealth = (int)(startingMaxHealth*(1+((float)getStatBonus("hppercent")/100f)));
-        defense = (int)(getStatBonus("defense")*(1+((float)getStatBonus("hppercent")/100f)));
+        defense = (int)(getStatBonus("defense")*(1+((float)getStatBonus("defensepercent")/100f)));
     }
 
     // Updates Mana
@@ -220,5 +254,9 @@ public class PlayerStats : MonoBehaviour
         int value = 0;
         statBonuses.TryGetValue(stat, out value);
         return value;
+    }
+
+    public Dictionary<string, int> getStatBonuses() {
+        return statBonuses;
     }
 }

@@ -80,6 +80,9 @@ public class NodeManager : MonoBehaviour
         if(Save.getMementos()!=null)
             Player.Instance.playerMemento.setEquippedMementos(Save.getMementos());
 
+        if(Save.getJewelry()!=null)
+            Player.Instance.playerJewelry.setEquippedJewelry(Save.getJewelry());
+
         if(Save.getEmotionLevels()!=null)
             Player.Instance.playerMemento.setEmotionLevels(Save.getEmotionLevels());
 
@@ -106,9 +109,9 @@ public class NodeManager : MonoBehaviour
 
         Save.setScene(SceneManager.GetActiveScene().name);
 
-        Player.Instance.playerStats.statBonuses = Player.Instance.playerMemento.getBonuses();
+        Player.Instance.playerStats.setMementoStatBonuses(Player.Instance.playerMemento.getBonuses());
 
-
+    
        
     }
 

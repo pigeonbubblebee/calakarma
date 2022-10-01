@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     public PlayerProjectileOrigin playerProjectileOrigin;
     public PlayerStats playerStats;
     public PlayerMemento playerMemento;
+    public PlayerJewelry playerJewelry;
 
     public Camera mainCamera;
 

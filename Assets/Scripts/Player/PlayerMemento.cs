@@ -17,13 +17,13 @@ public class PlayerMemento : MonoBehaviour
     public void setEquippedMemento(Item i, int index) {
         equippedMementos[index] = i;
 
-        Player.Instance.playerStats.statBonuses = getBonuses();
+        Player.Instance.playerStats.setMementoStatBonuses(getBonuses());
     }
 
     public void setEquippedMementos(Item[] x) {
         equippedMementos = x;
 
-        Player.Instance.playerStats.statBonuses = getBonuses();
+        Player.Instance.playerStats.setMementoStatBonuses(getBonuses());
     }
 
     public int getEmotionLevel(string id) {
@@ -42,13 +42,13 @@ public class PlayerMemento : MonoBehaviour
             emotionLevels[id] = i;
         }
 
-        Player.Instance.playerStats.statBonuses = getBonuses();
+        Player.Instance.playerStats.setMementoStatBonuses(getBonuses());
     }
 
     public void setEmotionLevels(Dictionary<string, int> x) {
         emotionLevels = x;
 
-        Player.Instance.playerStats.statBonuses = getBonuses();
+        Player.Instance.playerStats.setMementoStatBonuses(getBonuses());
     }
 
     public Dictionary<string, int> getEmotionLevels() {

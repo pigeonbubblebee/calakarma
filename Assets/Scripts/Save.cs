@@ -22,6 +22,8 @@ public class Save
     static string scene;
     static string respawnScene;
 
+    static Item[] jewelry;
+
     public static void SaveGame()
     {
         BinaryFormatter bf = new BinaryFormatter(); 
@@ -32,6 +34,7 @@ public class Save
         data.nodeDatas = nodeDatas;
         data.inventories = new InventoryDataSerializable[inventories.Length];
         data.equippedMementoIDs = new string[Player.Instance.playerMemento.getEquippedMementos().Length];
+        data.equippedJewelryIDs = new string[3];
 
         if(scene != null) {
             data.scene = scene;
@@ -64,6 +67,11 @@ public class Save
 
         data.playerHealth = health;
         data.playerMana = mana;
+
+        for(int i = 0; i < Player.Instance.playerJewelry.getEquippedJewelry().Length; i++) {
+            if(Player.Instance.playerJewelry.getEquippedJewelry()[i]!=null)
+                data.equippedJewelryIDs[i] = jewelry[i].getItemData().id;
+        }
 
         bf.Serialize(file, data);
         file.Close();
@@ -121,6 +129,12 @@ public class Save
 
             health = data.playerHealth;
             mana = data.playerMana;
+
+            for(int i = 0; i < data.equippedJewelryIDs.Length; i++) {
+                if(data.equippedJewelryIDs[i]!=null) {
+                    jewelry[i] = new Item(ItemRegistry.getItem(data.equippedJewelryIDs[i]));
+                }
+            }
             
             Debug.Log("Game data loaded!");
         }
@@ -157,6 +171,7 @@ public class Save
             setMementoSlots(Player.Instance.playerMemento.mementoSlots);
             setMementos(Player.Instance.playerMemento.getEquippedMementos());
             setEmotionLevels(Player.Instance.playerMemento.getEmotionLevels());
+            setJewelry(Player.Instance.playerJewelry.getEquippedJewelry());
         }
         
         setRespawnScene(Player.respawnScene);
@@ -275,6 +290,14 @@ public class Save
     public static void setRespawnScene(string scene) {
         Save.respawnScene = scene;
     }
+
+        public static void setJewelry(Item[] jewelry) {
+        Save.jewelry = jewelry;
+    }
+
+    public static Item[] getJewelry() {
+        return jewelry;
+    }
 }
 
 [Serializable]
@@ -293,6 +316,8 @@ class SaveData {
 
     public int playerHealth;
     public int playerMana;
+
+    public string[] equippedJewelryIDs;
 }
 
 [Serializable]

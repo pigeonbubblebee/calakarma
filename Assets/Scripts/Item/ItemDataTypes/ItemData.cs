@@ -23,7 +23,7 @@ public class ItemData : ScriptableObject
         Memento,
         Currency,
         Material,
-        Lore
+        Jewelry
     }
 
     // Creates a String Based On This Item's Tier
