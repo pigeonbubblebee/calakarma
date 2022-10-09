@@ -383,6 +383,7 @@ GameObject:
   - component: {fileID: 5425116704575225436}
   - component: {fileID: 2513005981133021384}
   - component: {fileID: 1961544271317231263}
+  - component: {fileID: 2076691158}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -537,6 +538,7 @@ MonoBehaviour:
   playerProjectileOrigin: {fileID: 1897665806}
   playerStats: {fileID: 2513005981133021384}
   playerMemento: {fileID: 1961544271317231263}
+  playerJewelry: {fileID: 2076691158}
   mainCamera: {fileID: 0}
 --- !u!114 &5425116704575225436
 MonoBehaviour:
@@ -609,6 +611,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mementoSlots: 3
+--- !u!114 &2076691158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2513005982218487415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e0867704a26e9f4091d3f5c6c647fad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2513005982722248061
 GameObject:
   m_ObjectHideFlags: 0

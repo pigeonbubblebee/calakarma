@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Settings.unity
     guid: bd5d315bc05873e4caeca8c0d8c03476
   - enabled: 1
+    path: Assets/Scenes/Save_Slots.unity
+    guid: 7cbfbda65a844ba47bc23dd6108bf198
+  - enabled: 1
     path: Assets/Scenes/Outskirts/Outskirts_1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1

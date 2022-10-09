@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5340384255511316020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.603, y: 0.353, z: 0}
+  m_LocalPosition: {x: 1.311, y: 0.509, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -233,9 +233,13 @@ MonoBehaviour:
   flipping: 0
   sprite: {fileID: 5340384257009829418}
   movement: {fileID: 1381794785}
-  attacks: []
-  weights: 
-  timestamps: []
+  attacks:
+  - {fileID: 1381794787}
+  - {fileID: 1381794786}
+  weights: 0000000005000000
+  timestamps:
+  - 0
+  - 0
   attacking: 0
 --- !u!114 &1381794785
 MonoBehaviour:
@@ -269,10 +273,10 @@ MonoBehaviour:
   attackLength: 0.8
   attackCooldown: 3
   dashSpeed: 0
-  chargeTime: 0.4
-  chargeAnimatorName: Slashing
-  dashAnimatorName: ChargingSlashing
-  damagePoint: {fileID: 0}
+  chargeTime: 0.6
+  chargeAnimatorName: ChargingSlash
+  dashAnimatorName: Slashing
+  damagePoint: {fileID: 5340384255511316021}
   damageRad: 1
   damage: 32
   range: 1.2
@@ -294,6 +298,6 @@ MonoBehaviour:
   chargeTime: 0.8
   chargeAnimatorName: ChargingDash
   dashAnimatorName: Dashing
-  damagePoint: {fileID: 0}
+  damagePoint: {fileID: 5340384255511316021}
   damageRad: 0.2
   damage: 48

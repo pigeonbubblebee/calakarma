@@ -86,6 +86,18 @@ public class JewelryInventory : Inventory
 
     public void equip() {
         if(selectedItem!=null && currentJewelrySlotSelected != -1) {
+            if(currentJewelrySlotSelected == 0) {
+                if(((JewelryData)(selectedItem.getItemData())).slotType != JewelryData.SlotType.Earrings) return;
+            }
+
+            if(currentJewelrySlotSelected == 1) {
+                if(((JewelryData)(selectedItem.getItemData())).slotType != JewelryData.SlotType.Bracelets) return;
+            }
+
+            if(currentJewelrySlotSelected == 2) {
+                if(((JewelryData)(selectedItem.getItemData())).slotType != JewelryData.SlotType.Ankles) return;
+            }
+
             bool equipped = false;
             int equippedIndex = -1;
             int i = 0;

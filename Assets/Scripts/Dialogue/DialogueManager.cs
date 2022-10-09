@@ -17,6 +17,8 @@ public class DialogueManager : MonoBehaviour
     public static DialogueManager Instance { get { return _instance; } }
 
     private Queue<string> dialogueQueue = new Queue<string>(); // Dialogue Handler
+
+    private DialogueEvent dialogueEvent;
     
     // Implements Singleton Pattern
     void Awake()
@@ -34,7 +36,7 @@ public class DialogueManager : MonoBehaviour
         nameText.text = LocalizationSystem.getLocalizedValue(dialogue.sourceName+":name"); // Gets Name and Image of the Dialogue Source
         image.sprite = dialogue.sourceImage;
         dialogueQueue.Clear(); // Clears All Current Dialogue
-
+        dialogueEvent = dialogue.dialogueEvent;
         foreach(string x in dialogue.dialogues) { // Adds All Dialogue From Argument To The Queue
             dialogueQueue.Enqueue(x);
         }
@@ -46,6 +48,9 @@ public class DialogueManager : MonoBehaviour
     public void displayNextSentence() {
         if(dialogueQueue.Count == 0) { // Terminates if All Dialogue is Done
             endDialogue();
+            if(dialogueEvent!=null) {
+                dialogueEvent.onEvent();
+            }
             return;
         }
 

@@ -14,14 +14,7 @@ public class MainMenu : MonoBehaviour
     }
 
     public void Play() {
-        Save.LoadScene();
-        string scene = Save.getScene();
-
-        if(scene == "" || scene == null) {
-            SceneManager.LoadScene("Outskirts_1");
-        } else {
-            SceneManager.LoadScene(scene);
-        }
+        SceneManager.LoadScene("Save_Slots");
     }
 
     public void Resume() {

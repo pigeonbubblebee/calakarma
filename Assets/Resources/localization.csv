@@ -116,3 +116,8 @@
 "Dialogue:bind","Advance Dialogue"
 "Interact:bind","Interact"
 "Attack:bind","Attack"
+"one:slot","Slot One"
+"two:slot","Slot Two"
+"three:slot","Slot Three"
+"four:slot","Slot Four"
+"five:slot","Slot Five"

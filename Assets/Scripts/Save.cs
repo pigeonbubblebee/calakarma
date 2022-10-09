@@ -24,11 +24,13 @@ public class Save
 
     static Item[] jewelry;
 
+    public static int currentSaveSlot = 1;
+
     public static void SaveGame()
     {
         BinaryFormatter bf = new BinaryFormatter(); 
         FileStream file = File.Create(Application.persistentDataPath 
-                    + "/CalakarmaSave.dat"); 
+                    + "/CalakarmaSave" + currentSaveSlot + ".dat"); 
         SaveData data = new SaveData();
 
         data.nodeDatas = nodeDatas;
@@ -82,12 +84,12 @@ public class Save
     {
         GameObject.Find("Player").GetComponent<Player>().setSingleton();
         if (File.Exists(Application.persistentDataPath 
-                    + "/CalakarmaSave.dat"))
+                    + "/CalakarmaSave" + currentSaveSlot + ".dat"))
         {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = 
                     File.Open(Application.persistentDataPath 
-                    + "/CalakarmaSave.dat", FileMode.Open);
+                    + "/CalakarmaSave" + currentSaveSlot + ".dat", FileMode.Open);
             SaveData data = (SaveData)bf.Deserialize(file);
             file.Close();
             nodeDatas = data.nodeDatas;
@@ -144,12 +146,12 @@ public class Save
 
     public static void LoadScene() {
         if (File.Exists(Application.persistentDataPath 
-                    + "/CalakarmaSave.dat"))
+                    + "/CalakarmaSave" + currentSaveSlot + ".dat"))
         {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = 
                     File.Open(Application.persistentDataPath 
-                    + "/CalakarmaSave.dat", FileMode.Open);
+                    + "/CalakarmaSave" + currentSaveSlot + ".dat", FileMode.Open);
             SaveData data = (SaveData)bf.Deserialize(file);
             file.Close();
 

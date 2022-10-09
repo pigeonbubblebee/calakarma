@@ -276,9 +276,9 @@ MonoBehaviour:
   chargeTime: 0.4
   chargeAnimatorName: ChargingSlash
   dashAnimatorName: Slashing
-  damagePoint: {fileID: 6843046662631842365}
+  damagePoint: {fileID: 6870250452983307378}
   damageRad: 1
-  damage: 19
+  damage: 0
   range: 1.2
 --- !u!114 &2013756511
 MonoBehaviour:
@@ -298,6 +298,6 @@ MonoBehaviour:
   chargeTime: 0.8
   chargeAnimatorName: ChargingDash
   dashAnimatorName: Dashing
-  damagePoint: {fileID: 6843046662631842365}
+  damagePoint: {fileID: 6870250452983307378}
   damageRad: 0.2
   damage: 23

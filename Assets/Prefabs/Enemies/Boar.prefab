@@ -225,7 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 18
   defense: 0
-  damageIndicator: {fileID: 3240720543687240697}
+  damageIndicator: {fileID: 3266852344596747702}
   corpseLifetime: 3
   dead: 0
   animator: {fileID: 3266852345099675629}
@@ -254,7 +254,7 @@ MonoBehaviour:
   attackCooldown: 2
   chargeSpeed: 5
   chargeAnimatorName: Charging
-  damagePoint: {fileID: 3240720543687240697}
+  damagePoint: {fileID: 3266852344596747702}
   damageRad: 0.3
   damage: 16
 --- !u!114 &310568879

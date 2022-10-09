@@ -221,6 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   disabled: 0
   detectRadius: 8
+  detected: 0
   moveSpeed: 1
   minDistFromPlayer: 1.5
 --- !u!114 &121433140175476088
@@ -241,7 +242,7 @@ MonoBehaviour:
   chargeTime: 0.8
   chargeAnimatorName: ChargingDash
   dashAnimatorName: Dashing
-  damagePoint: {fileID: 1758994334}
+  damagePoint: {fileID: 121433141033738705}
   damageRad: 0.2
   damage: 12
 --- !u!1 &121433141033738704

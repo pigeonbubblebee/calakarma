@@ -9,4 +9,5 @@ public class Dialogue : ScriptableObject
     public string sourceName;
     public string[] dialogues;
     public Sprite sourceImage;
+    public DialogueEvent dialogueEvent; // Triggers On End
 }
