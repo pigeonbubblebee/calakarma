@@ -48,10 +48,9 @@ MonoBehaviour:
   - bloodcurseddefred;20
   - bloodcurseddmgred;20
   - bloodcursedlngth;3
-  observationLevel: 0
-  bleeding: {fileID: 11400000, guid: 33abddffcff765b4aa7d7d3a31d0cbae, type: 2}
-  ruptured: {fileID: 11400000, guid: a08d7a5241b5c0644a9bd1883e291d7f, type: 2}
-  bloodCurse: {fileID: 11400000, guid: 8b8213af10e75db4abdc204e7d7ae0e4, type: 2}
+  bleeding: {fileID: 11400000, guid: 053a8d82d3df9bb45a10e8be2efa96e2, type: 2}
+  ruptured: {fileID: 11400000, guid: 94d89436e2db65c4487b392aa21c24f4, type: 2}
+  bloodCurse: {fileID: 11400000, guid: f5c2421121d1b764bae8ca08ae15b93d, type: 2}
   bleedingLength: 3
   rupturedLength: 3
   bloodCurseLength: 3

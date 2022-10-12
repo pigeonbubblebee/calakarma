@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debuff: 1
   id: blood_curse
-  damage: 3
   damageRate: 0.6
   damageReduction: 20
   defenseReduction: 20

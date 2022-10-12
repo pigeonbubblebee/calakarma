@@ -25,9 +25,9 @@ public class SwordData : WeaponData
             Enemy e = collider.gameObject.GetComponent<Enemy>();
             if(e!=null) {
                 if(!charged) // Applies Appropriate Damage
-                    e.takeDamage(((WeaponData)(equippedWeapon.getItemData())).damage);
+                    e.takeDamage((int)(damage*(1+((float)Player.Instance.playerStats.getStatBonus("damagepercent"))/100)));
                 else
-                    e.takeDamage(((SwordData)(equippedWeapon.getItemData())).chargeDamage);
+                    e.takeDamage((int)(chargeDamage*(1+((float)Player.Instance.playerStats.getStatBonus("damagepercent"))/100)));
 
                 playerMementoEffects(collider);
             }

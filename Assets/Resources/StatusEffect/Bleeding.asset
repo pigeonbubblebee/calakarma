@@ -14,5 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debuff: 1
   id: bleeding
-  damage: 1
   damageRate: 1

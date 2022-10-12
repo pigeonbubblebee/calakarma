@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 4472370488280437642}
   - component: {fileID: 4472370488280437636}
   - component: {fileID: 4472370488280437643}
-  - component: {fileID: 4472370488280437654}
+  - component: {fileID: 2051114296}
   m_Layer: 9
   m_Name: BearProj
   m_TagString: Untagged
@@ -166,7 +166,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 0.3}
   m_EdgeRadius: 0
---- !u!114 &4472370488280437654
+--- !u!114 &2051114296
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,9 +175,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4472370488280437641}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e50b0c74bf335a4e974a81031f8ed03, type: 3}
+  m_Script: {fileID: 11500000, guid: 669e0a311543c26429a9dce3d413b8f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 4472370488280437636}
   damage: 20
   maxLifetime: 10
+  bloodCurse: {fileID: 11400000, guid: f5c2421121d1b764bae8ca08ae15b93d, type: 2}
+  bloodCurseLength: 3
+  bloodCurseDamage: 3
