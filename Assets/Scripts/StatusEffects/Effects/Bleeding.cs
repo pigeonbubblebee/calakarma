@@ -6,7 +6,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "StatusEffect/Bleeding")]
 public class Bleeding : StatusEffect
 {
-    public int damage;
     public float damageRate;
 
     public override void tick(Enemy e, float potency) {
@@ -14,6 +13,10 @@ public class Bleeding : StatusEffect
     }
 
     void damageEnemy(Enemy e, float potency) {
-        e.takeDamage((int)(damage*(1+potency)));
+        e.takeDamage((int)((1+potency)));
+    }
+
+    public override void tickPlayer(Player p, float potency) {
+        p.playerStats.takeDamage(((int)((1+potency))));
     }
 }

@@ -46,7 +46,7 @@ public class WildSpiritData : MementoData
         if(emotionLevel > 3) {
             Enemy e = collision.gameObject.GetComponent<Enemy>();
 
-            e.addStatus(new TickingEffectInstance(bloodCurse, e, bloodCurseLength, bloodCurse.damageRate, 0));
+            e.addStatus(new TickingEffectInstance(bloodCurse, e, bloodCurseLength, bloodCurse.damageRate, 2));
         }
     }
 
@@ -68,7 +68,7 @@ public class WildSpiritData : MementoData
         if(emotionLevel > 3) {
             Enemy e = collision.gameObject.GetComponent<Enemy>();
 
-            e.addStatus(new TickingEffectInstance(bloodCurse, e, bloodCurseLength, bloodCurse.damageRate, 0));
+            e.addStatus(new TickingEffectInstance(bloodCurse, e, bloodCurseLength, bloodCurse.damageRate, 2));
         }
     }
 
@@ -90,7 +90,7 @@ public class WildSpiritData : MementoData
         if(emotionLevel > 3) {
             Enemy e = collision.gameObject.GetComponent<Enemy>();
 
-            e.addStatus(new TickingEffectInstance(bloodCurse, e, bloodCurseLength, bloodCurse.damageRate, 0));
+            e.addStatus(new TickingEffectInstance(bloodCurse, e, bloodCurseLength, bloodCurse.damageRate, 2));
         }
     }
 }

@@ -65,8 +65,11 @@ public class PlayerStats : MonoBehaviour
 
     public Dictionary<string, int> mementoStatBonuses = new Dictionary<string, int>();
     public Dictionary<string, int> jewelryStatBonuses = new Dictionary<string, int>();
+    public Dictionary<string, int> effectsStatBonuses = new Dictionary<string, int>();
 
     Dictionary<string, int> statBonuses = new Dictionary<string, int>();
+
+    public List<EffectInstance> statuses = new List<EffectInstance>();
 
     // Applies Damage To Player
     public void takeDamage(int damage) {
@@ -88,6 +91,10 @@ public class PlayerStats : MonoBehaviour
         foreach(string key in jewelryStatBonuses.Keys) {
             addToStat(key, x[key], statBonuses);
         }
+
+        foreach(string key in effectsStatBonuses.Keys) {
+            addToStat(key, effectsStatBonuses[key], statBonuses);
+        }
     }
 
     public void setJewelryStatBonuses(Dictionary<string, int> x) {
@@ -97,6 +104,24 @@ public class PlayerStats : MonoBehaviour
 
         foreach(string key in jewelryStatBonuses.Keys) {
             addToStat(key, x[key], statBonuses);
+        }
+
+        foreach(string key in effectsStatBonuses.Keys) {
+            addToStat(key, effectsStatBonuses[key], statBonuses);
+        }
+    }
+
+    public void setEffectsStatBonuses(Dictionary<string, int> x) {
+        effectsStatBonuses = x;
+
+        statBonuses = mementoStatBonuses;
+
+        foreach(string key in jewelryStatBonuses.Keys) {
+            addToStat(key, x[key], statBonuses);
+        }
+
+        foreach(string key in effectsStatBonuses.Keys) {
+            addToStat(key, effectsStatBonuses[key], statBonuses);
         }
     }
 
@@ -123,6 +148,28 @@ public class PlayerStats : MonoBehaviour
         updateBars();
 
         updateStatBonuses();
+
+        updateEffects();
+    }
+
+    private void updateEffects() {
+        foreach(EffectInstance s in statuses) {
+            if(s!=null) {
+                s.updateEffectPlayer();
+            }
+        }
+        //Debug.Log(statuses.Exists(effectOver));
+        statuses.RemoveAll(isOver);
+    }
+
+    private bool isOver(EffectInstance s) {
+        //Debug.Log(s.effectOver);
+
+        if(s.effectOver) {
+            return true;
+        }
+
+        return false;
     }
 
     // Update HUD Bars
@@ -258,5 +305,39 @@ public class PlayerStats : MonoBehaviour
 
     public Dictionary<string, int> getStatBonuses() {
         return statBonuses;
+    }
+
+    public void addStatus(EffectInstance s) {
+        foreach(EffectInstance e in statuses) {
+            if(e.statusEffect.id.Equals(s.statusEffect.id)) {
+                e.length = s.length;
+                return;
+            }
+        }
+        statuses.Add(s);
+
+        effectsStatBonuses = updateStatusEffects();
+
+        setEffectsStatBonuses(effectsStatBonuses);
+    }
+
+    Dictionary<string, int> updateStatusEffects() {
+        Dictionary<string, int> result = new Dictionary<string, int>();
+
+        foreach(EffectInstance s in statuses) {
+            Dictionary<string, int> x = s.statusEffect.statEffects();
+            foreach(var(Key, Value) in x) {
+                try
+                {
+                    result.Add(Key, Value);
+                }
+                catch (ArgumentException)
+                {
+                    result[Key] += Value;
+                }
+            }
+        }
+
+        return result;
     }
 }

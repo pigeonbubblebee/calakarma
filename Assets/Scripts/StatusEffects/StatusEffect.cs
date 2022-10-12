@@ -16,6 +16,14 @@ public class StatusEffect : ScriptableObject
 
     }
 
+    public virtual void updateEffectPlayer(Player p) {
+
+    }
+
+    public virtual void tickPlayer(Player p, float potency) {
+
+    }
+
     public virtual Dictionary<string, int> statEffects() {
         return new Dictionary<string, int>();
     }

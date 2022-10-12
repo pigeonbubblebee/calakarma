@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 1381794781}
   - component: {fileID: 1381794785}
   - component: {fileID: 1381794786}
-  - component: {fileID: 1381794787}
+  - component: {fileID: 3687146900776042867}
   m_Layer: 8
   m_Name: Bear
   m_TagString: Untagged
@@ -234,9 +234,9 @@ MonoBehaviour:
   sprite: {fileID: 5340384257009829418}
   movement: {fileID: 1381794785}
   attacks:
-  - {fileID: 1381794787}
+  - {fileID: 3687146900776042867}
   - {fileID: 1381794786}
-  weights: 0000000005000000
+  weights: 0500000000000000
   timestamps:
   - 0
   - 0
@@ -280,7 +280,7 @@ MonoBehaviour:
   damageRad: 1
   damage: 32
   range: 1.2
---- !u!114 &1381794787
+--- !u!114 &3687146900776042867
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -289,15 +289,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 5340384257009829428}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7329f8ed00057284287afae40c1063e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 59257651489cafc4a9ddf57a6791c038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackLength: 1
-  attackCooldown: 4
-  dashSpeed: 8
-  chargeTime: 0.8
-  chargeAnimatorName: ChargingDash
-  dashAnimatorName: Dashing
-  damagePoint: {fileID: 5340384255511316021}
-  damageRad: 0.2
-  damage: 48
+  attackLength: 0.33
+  attackCooldown: 2
+  power: 10
+  chargeTime: 0.5
+  chargeAnimatorName: ChargingSpit
+  shootAnimatorName: Spitting
+  firePoint: {fileID: 0}
+  damage: 0
+  range: 0
+  projectile: {fileID: 0}

@@ -6,6 +6,7 @@ public class EffectInstance
 {
     public StatusEffect statusEffect;
     public Enemy e;
+    public Player p;
 
     float secondTimestamp;
 
@@ -24,8 +25,24 @@ public class EffectInstance
         this.inflictedTimestamp = Time.time;
     }
 
+
+    public EffectInstance(StatusEffect statusEffect, Player p, float length) {
+        this.statusEffect = statusEffect;
+        this.p = p;
+        this.length = length;
+        this.inflictedTimestamp = Time.time;
+    }
+
     public virtual void updateEffect() {
         statusEffect.updateEffect(e);
+        
+        if(Time.time > inflictedTimestamp + length) {
+            effectOver = true;
+        }
+    }
+
+    public virtual void updateEffectPlayer() {
+        statusEffect.updateEffectPlayer(p);
         
         if(Time.time > inflictedTimestamp + length) {
             effectOver = true;
