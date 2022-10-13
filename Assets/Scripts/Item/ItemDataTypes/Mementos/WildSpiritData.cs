@@ -32,19 +32,19 @@ public class WildSpiritData : MementoData
         // BLEED
 
         if(emotionLevel > 0) {
-            Enemy e = collision.gameObject.GetComponent<Enemy>();
+            Enemy e = collision.gameObject.transform.parent.gameObject.GetComponent<Enemy>();
 
             e.addStatus(new TickingEffectInstance(bleeding, e, bleedingLength, bleeding.damageRate, 0));
         }
 
         if(emotionLevel > 2) {
-            Enemy e = collision.gameObject.GetComponent<Enemy>();
+            Enemy e = collision.gameObject.transform.parent.gameObject.GetComponent<Enemy>();
 
             e.addStatus(new EffectInstance(ruptured, e, rupturedLength));
         }
 
         if(emotionLevel > 3) {
-            Enemy e = collision.gameObject.GetComponent<Enemy>();
+            Enemy e = collision.gameObject.transform.parent.gameObject.GetComponent<Enemy>();
 
             e.addStatus(new TickingEffectInstance(bloodCurse, e, bloodCurseLength, bloodCurse.damageRate, 2));
         }
@@ -54,19 +54,19 @@ public class WildSpiritData : MementoData
         // BLEED
 
         if(emotionLevel > 0) {
-            Enemy e = collision.gameObject.GetComponent<Enemy>();
+            Enemy e = collision.gameObject.transform.parent.gameObject.GetComponent<Enemy>();
 
             e.addStatus(new TickingEffectInstance(bleeding, e, bleedingLength, bleeding.damageRate, 0));
         }
 
         if(emotionLevel > 2) {
-            Enemy e = collision.gameObject.GetComponent<Enemy>();
+            Enemy e = collision.gameObject.transform.parent.gameObject.GetComponent<Enemy>();
 
             e.addStatus(new EffectInstance(ruptured, e, rupturedLength));
         }
 
         if(emotionLevel > 3) {
-            Enemy e = collision.gameObject.GetComponent<Enemy>();
+            Enemy e = collision.gameObject.transform.parent.gameObject.GetComponent<Enemy>();
 
             e.addStatus(new TickingEffectInstance(bloodCurse, e, bloodCurseLength, bloodCurse.damageRate, 2));
         }
@@ -76,19 +76,19 @@ public class WildSpiritData : MementoData
         // BLEED
 
         if(emotionLevel > 0) {
-            Enemy e = collision.gameObject.GetComponent<Enemy>();
+            Enemy e = collision.gameObject.transform.parent.gameObject.GetComponent<Enemy>();
 
             e.addStatus(new TickingEffectInstance(bleeding, e, bleedingLength, bleeding.damageRate, 0));
         }
 
         if(emotionLevel > 2) {
-            Enemy e = collision.gameObject.GetComponent<Enemy>();
+            Enemy e = collision.gameObject.transform.parent.gameObject.GetComponent<Enemy>();
 
             e.addStatus(new EffectInstance(ruptured, e, rupturedLength));
         }
 
         if(emotionLevel > 3) {
-            Enemy e = collision.gameObject.GetComponent<Enemy>();
+            Enemy e = collision.gameObject.transform.parent.gameObject.GetComponent<Enemy>();
 
             e.addStatus(new TickingEffectInstance(bloodCurse, e, bloodCurseLength, bloodCurse.damageRate, 2));
         }

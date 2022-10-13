@@ -51,8 +51,6 @@ public class BasicProjectile : EnemyAttack
         GameObject newProj = Instantiate(projectile, firePoint.position, firePoint.rotation);
         newProj.GetComponent<Rigidbody2D>().velocity = firePoint.right*power;
         newProj.SetActive(true);
-
-        Debug.Log(newProj);
     }
 
     public override void finishAttack(Enemy e) {

@@ -13,4 +13,7 @@ public class Layers
     public static int defaultLayer = 0;
     public static int itemLayer = 10;
     public static int exitLayer = 11;
+    public static int enemyProjectileLayer = 12;
+    public static int enemyHitboxLayer = 13;
+    public static int playerHitboxLayer = 14;
 }

@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 4472370488280437636}
   - component: {fileID: 4472370488280437643}
   - component: {fileID: 2051114296}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: BearProj
   m_TagString: Untagged
   m_Icon: {fileID: 0}

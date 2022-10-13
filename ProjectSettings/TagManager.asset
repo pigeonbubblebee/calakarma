@@ -17,9 +17,9 @@ TagManager:
   - Projectile
   - Item
   - NodeExit
-  - 
-  - 
-  - 
+  - EnemyProjectile
+  - EnemyHitbox
+  - PlayerHitbox
   - 
   - 
   - 

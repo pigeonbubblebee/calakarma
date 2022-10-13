@@ -11,17 +11,16 @@ public class Arrow : Projectile
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
-    // Arrow Base On Hit Functionality
+    // Magic Proj Base On Hit Functionality
     public override void onCollision(Collision2D collision)
     {
-        if(collision.gameObject.layer == Layers.groundLayer || collision.gameObject.layer == Layers.enemyLayer) { // Checks Ground And Enemy Layer
+        if(collision.gameObject.layer == Layers.groundLayer || collision.gameObject.layer == Layers.enemyHitboxLayer) { // Checks Ground And Enemy Layer
             rb.velocity = Vector2.zero; // Cancels All Velocity
-            if(collision.gameObject.layer == Layers.enemyLayer) { // Deals Damage To Enemy
-                onHit(collision.gameObject);
+            if(collision.gameObject.layer == Layers.enemyHitboxLayer) { // Deals Damage To Enemy
+                onHit(collision.gameObject.transform.parent.gameObject);
                 playerMementoEffects(collision);
             }
-
-            Destroy(this.gameObject); // Terminates This Arrow's GameObject
+            Destroy(this.gameObject); // Terminate This Projectile's GameObject
         }
     }
 

@@ -8,9 +8,9 @@ public class BearSpit : ArrowEnemy
     public float bloodCurseLength;
     public int bloodCurseDamage;
 
-    public override void onHit(GameObject player) {
-        base.onHit(player);
+    public override void onHit() {
+        base.onHit();
 
-        player.GetComponent<Player>().playerStats.addStatus(new TickingEffectInstance(bloodCurse, Player.Instance, bloodCurseLength, bloodCurse.damageRate, 2));
+        Player.Instance.playerStats.addStatus(new TickingEffectInstance(bloodCurse, Player.Instance, bloodCurseLength, bloodCurse.damageRate, 2));
     }
 }

@@ -68,7 +68,7 @@ public class ProximityDash : EnemyAttack
         Collider2D[] hits = Physics2D.OverlapCircleAll(damagePoint.position, damageRad);
 
         foreach(Collider2D hit in hits) {
-            if(hit.GetComponent<Player>()!=null && invincibility) {
+            if(hit.gameObject.tag == "Player" && invincibility) {
                 Player.Instance.playerStats.takeDamage((int)(damage*(1+((float)e.getStatEffect("damagepercent"))/100)));
                 invincibility = false;
             }

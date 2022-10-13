@@ -17,7 +17,7 @@ public class ArrowEnemy : Projectile
         if(collision.gameObject.layer == Layers.groundLayer || collision.gameObject.tag == "Player") { // Checks Ground And Enemy Layer
             rb.velocity = Vector2.zero; // Cancels All Velocity
             if(collision.gameObject.tag == "Player") { // Deals Damage To Enemy
-                onHit(collision.gameObject);
+                onHit();
             }
 
             Destroy(this.gameObject); // Terminates This Arrow's GameObject
@@ -26,7 +26,7 @@ public class ArrowEnemy : Projectile
 
     // Overrode Method
     // Deals Appropriate Damage To An Player Entity
-    public virtual void onHit(GameObject player) {
+    public virtual void onHit() {
         Player.Instance.playerStats.takeDamage(damage);
     }
 }
