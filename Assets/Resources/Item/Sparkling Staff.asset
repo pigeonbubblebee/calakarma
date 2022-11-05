@@ -19,8 +19,8 @@ MonoBehaviour:
   itemImage: {fileID: 21300000, guid: 391054c37a40f4c4c8fdc9ee2be58eb8, type: 3}
   itemImageInWorld: {fileID: 21300000, guid: b257c5f7a3076cf419f4fdaf41222447, type: 3}
   damage: 6
-  speed: 0.5
-  chargeSpeed: 0.4
+  speed: 0.6
+  chargeSpeed: 0.2
   otherAttributes: []
   weaponType: 2
   weaponDamageType: 2
@@ -28,4 +28,4 @@ MonoBehaviour:
   projectileSpeed: 20
   projectile: {fileID: 4862223678253149441, guid: a6a4a54e096687c469c6e58a71d9058e, type: 3}
   manaCost: 40
-  overloadDamage: 12
+  overloadDamage: 24

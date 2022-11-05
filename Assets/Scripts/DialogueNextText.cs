@@ -11,11 +11,11 @@ public class DialogueNextText : MonoBehaviour
     {
         if(ControlBinds.GetBindMap("Dialogue").isKey) {
                 if(ControlBinds.GetBindMap("Dialogue").key.Equals(KeyCode.LeftShift)) {
-                    keybindText.text = "Shift ->";
+                    keybindText.text =  LocalizationSystem.getLocalizedValue("shift:key") + " ->";
                 } else if(ControlBinds.GetBindMap("Dialogue").key.Equals(KeyCode.Escape)) {
-                    keybindText.text = "Escape ->";
+                    keybindText.text = LocalizationSystem.getLocalizedValue("escape:key") + " ->";
                 } else if(ControlBinds.GetBindMap("Dialogue").key.Equals(KeyCode.Space)) {
-                    keybindText.text = "Space ->";
+                    keybindText.text = LocalizationSystem.getLocalizedValue("space:key") + " ->";
                 } else {
                     keybindText.text = ControlBinds.GetBindMap("Dialogue").key.ToString() + " ->";
                 }

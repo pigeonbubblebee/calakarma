@@ -68,7 +68,7 @@ public class UIManager : MonoBehaviour
             }
         }
 
-        if(ControlBinds.GetButtonDown("Escape")) {
+        if(Input.GetKeyDown(KeyCode.Escape)) {
             if(uiOpen(Inventory)) {
                 toggleUIOff(Inventory);
             } else {

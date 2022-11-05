@@ -358,7 +358,7 @@ SpriteRenderer:
   m_SortingLayerID: -1099148545
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5bef7ee790cb8a64cba6a6f7e3916a6c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6afcc75b9658b7047a727f4b6b432272, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -467,10 +467,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1a3da070cb59f440b95986f212108eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entranceName: left
+  entranceName: entrance
   scene:
-    sceneAsset: {fileID: 102900000, guid: 5022bad00e9cd2c458196a8b7c140e84, type: 3}
-    scenePath: Assets/Scenes/Outskirts_BearCave_1.unity
+    sceneAsset: {fileID: 102900000, guid: b5ee0d113610ecb449411a1d553758f3, type: 3}
+    scenePath: Assets/Scenes/Outskirts/Outskirts_Bear_Cave.unity
 --- !u!61 &486820843
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ public static class ControlBinds
         "Jump",
         "Dash",        
         "Inventory",
-        "Escape",
+        "Special",
         "Dialogue",
         "Interact",
         "Attack"
@@ -25,7 +25,7 @@ public static class ControlBinds
         new Bind(KeyCode.Space),
         new Bind(KeyCode.R),
         new Bind(KeyCode.B),
-        new Bind(KeyCode.Escape),
+        new Bind(KeyCode.Q),
         new Bind(KeyCode.Z),
         new Bind(1),
         new Bind(0)

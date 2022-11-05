@@ -69,7 +69,7 @@ public class SettingsFunctionality : MonoBehaviour
         if(Input.GetMouseButtonUp(0)) {
             isMouseDown = false;
         }
-        if(ControlBinds.GetButtonDown("Escape")) {
+        if(Input.GetKeyDown(KeyCode.Escape)) {
             SettingsSave.Save();
             SceneManager.LoadScene(loadScene);
         }
@@ -93,11 +93,11 @@ public class SettingsFunctionality : MonoBehaviour
         for(int i = 0; i < keybindText.Length; i++) {
             if(ControlBinds.GetBindMap(action[i]).isKey) {
                 if(ControlBinds.GetBindMap(action[i]).key.Equals(KeyCode.LeftShift)) {
-                    keybindText[i].text = LocalizationSystem.getLocalizedValue(action[i]+":bind") + " - Shift";
+                    keybindText[i].text = LocalizationSystem.getLocalizedValue(action[i]+":bind") + " - " + LocalizationSystem.getLocalizedValue("shift:key");
                 } else if(ControlBinds.GetBindMap(action[i]).key.Equals(KeyCode.Escape)) {
-                    keybindText[i].text = LocalizationSystem.getLocalizedValue(action[i]+":bind") + " - Escape";
+                    keybindText[i].text = LocalizationSystem.getLocalizedValue(action[i]+":bind") + " - " + LocalizationSystem.getLocalizedValue("escape:key");
                 } else if(ControlBinds.GetBindMap(action[i]).key.Equals(KeyCode.Space)) {
-                    keybindText[i].text = LocalizationSystem.getLocalizedValue(action[i]+":bind") + " - Space";
+                    keybindText[i].text = LocalizationSystem.getLocalizedValue(action[i]+":bind") + " - " + LocalizationSystem.getLocalizedValue("space:key");
                 } else {
                     keybindText[i].text = LocalizationSystem.getLocalizedValue(action[i]+":bind") + " - " + ControlBinds.GetBindMap(action[i]).key.ToString();
                 }
@@ -182,12 +182,12 @@ public class SettingsFunctionality : MonoBehaviour
                 return;
             }
 
-            if(Input.GetKey(KeyCode.Escape)) {
-                string action = ControlBinds.getDefaultActions()[currentBindIndex];
-                ControlBinds.SetBindMap(action, new Bind(KeyCode.Escape));
-                isBinding = false;
-                keybindText[currentBindIndex].text = LocalizationSystem.getLocalizedValue(action+":bind") + " - Escape";
-            }
+            // if(Input.GetKey(KeyCode.Escape)) {
+            //     string action = ControlBinds.getDefaultActions()[currentBindIndex];
+            //     ControlBinds.SetBindMap(action, new Bind(KeyCode.Escape));
+            //     isBinding = false;
+            //     keybindText[currentBindIndex].text = LocalizationSystem.getLocalizedValue(action+":bind") + " - Escape";
+            // }
         }
     }
 
