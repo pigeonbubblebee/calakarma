@@ -33,6 +33,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] EnemyAttack[] attacks;
     [SerializeField] int[] weights;
     [SerializeField] float[] timestamps;
+    [SerializeField] EnemyDeath enemyDeath;
 
     public bool attacking = false;
     float atkTimestamp;
@@ -65,9 +66,17 @@ public class Enemy : MonoBehaviour
             animator.SetBool("Dead", true);
             dead = true;
 
+            if(enemyDeath!=null) {
+                enemyDeath.onDeath();
+            }
+
             this.enabled = false;
             
         }
+    }
+
+    public void unconditionalHealthChange(int change) {
+        health+=change;
     }
 
     // Getter Method For Health

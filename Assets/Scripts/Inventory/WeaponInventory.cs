@@ -21,8 +21,8 @@ public class WeaponInventory : Inventory
             LocalizationSystem.getLocalizedValue("attackspd:statname") +": "+ (((WeaponData)(item.getItemData())).speed+((WeaponData)(item.getItemData())).chargeSpeed) + "\n";
 
             if(((WeaponData)(item.getItemData())).weaponType == WeaponData.WeaponType.Sword) { // Adds Charge Speed And Charge Attack
-                description+=LocalizationSystem.getLocalizedValue("chargespd:statname") + ": " +(((SwordData)(item.getItemData())).charge100PercentSpeed) + "\n";
-                description+=LocalizationSystem.getLocalizedValue("chargeatk:statname") + ": " +(((SwordData)(item.getItemData())).chargeDamage) + "\n";
+                //description+=LocalizationSystem.getLocalizedValue("chargespd:statname") + ": " +(((SwordData)(item.getItemData())).charge100PercentSpeed) + "\n";
+                description+=LocalizationSystem.getLocalizedValue("comboatk:statname") + ": " +(((SwordData)(item.getItemData())).comboDamage) + "\n";
             } else if(((WeaponData)(item.getItemData())).weaponType == WeaponData.WeaponType.Bow) { // Adds Range
                 description+=LocalizationSystem.getLocalizedValue("projspd:statname") + ": " +(((BowData)(item.getItemData())).projectileSpeed) + "\n";
                 description+=LocalizationSystem.getLocalizedValue("stlthatk:statname") + ": " +(((BowData)(item.getItemData())).stealthDamage) + "\n";

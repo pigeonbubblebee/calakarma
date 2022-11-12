@@ -40,7 +40,7 @@ public class PlayerCombat : MonoBehaviour
 
         if (equippedWeapon != null)
         {
-            if (ControlBinds.GetButtonDown("Attack") && !chargingAttack) // Checks For Attacks
+            if (ControlBinds.GetButton("Attack")) // Checks For Attacks
             {
                 Player.Instance.playerCombat.weaponObject.SetActive(true);
                 Player.Instance.playerAnimation.setBool("Sprinting", false);
@@ -51,7 +51,7 @@ public class PlayerCombat : MonoBehaviour
                 {
                     if (((WeaponData)(this.equippedWeapon.getItemData())).weaponType == WeaponData.WeaponType.Sword && !attacking)
                     { // Starts Sword Attack
-                        Player.Instance.playerStats.charging = true;
+                        // Player.Instance.playerStats.charging = true;
 
                         attacking = true;
                         Player.Instance.playerAnimation.setBool("ChargingSword", true);
@@ -82,10 +82,7 @@ public class PlayerCombat : MonoBehaviour
                 Player.Instance.playerAnimation.setBool("ChargingStaff", false);
                 weaponObject.GetComponent<Animator>().SetBool("Charging", false);
 
-                if(!Player.Instance.playerStats.charged) {
-                    Player.Instance.playerStats.resetCharge();
-                    Player.Instance.playerStats.charging = false;
-                }
+                
             }
         }
     }
@@ -134,7 +131,7 @@ public class PlayerCombat : MonoBehaviour
     // Starts Sword Attack
     public void swordAttack()
     {
-        ((SwordData)(equippedWeapon.getItemData())).onAttack(Player.Instance.playerStats.charged, enemyLayer, swordPoint, equippedWeapon);
+        ((SwordData)(equippedWeapon.getItemData())).onAttack(Player.Instance.playerStats.comboReady, enemyLayer, swordPoint, equippedWeapon);
     }
 
     // Starts Bow Attack

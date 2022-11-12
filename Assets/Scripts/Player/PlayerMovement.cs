@@ -145,6 +145,8 @@ public class PlayerMovement : MonoBehaviour
             if(!Player.Instance.playerCombat.chargingAttack) {
                 Player.Instance.playerCombat.weaponObject.SetActive(false);
                 playerAnimation.setBool("Sprinting", true);
+            } else {
+                Player.Instance.playerCombat.weaponObject.SetActive(true);
             }
         } else {
             moving = false;

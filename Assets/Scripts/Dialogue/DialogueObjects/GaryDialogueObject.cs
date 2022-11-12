@@ -18,6 +18,10 @@ public class GaryDialogueObject : DialogueNPC
         } else {
             this.talkToPlayerCount = Int32.Parse(nodeDataObject.getData());
         }
+
+        if(talkToPlayerCount == 2) {
+            gifts.SetActive(true);
+        }
     }
 
     // Dialogue Triggered

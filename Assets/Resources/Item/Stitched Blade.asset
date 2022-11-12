@@ -28,4 +28,4 @@ MonoBehaviour:
   reach: 0.9
   hitRad: 0.5
   charge100PercentSpeed: 0.5
-  chargeDamage: 7
+  comboDamage: 9

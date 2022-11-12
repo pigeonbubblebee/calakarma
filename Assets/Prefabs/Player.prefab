@@ -656,11 +656,10 @@ MonoBehaviour:
   stealth: 0
   stealthed: 0
   stealthRegenerationRate: 0.1
-  maxCharge: 100
-  charge: 0
-  charged: 0
-  chargeRate: 0.1
-  charging: 0
+  maxCombo: 5
+  combo: 0
+  comboReady: 0
+  comboRate: 0.75
   maxDash: 20
   dash: 0
   dashReady: 0

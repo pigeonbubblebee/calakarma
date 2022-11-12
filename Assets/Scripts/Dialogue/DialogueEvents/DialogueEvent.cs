@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(menuName = "DialogueEvent")]
+[CreateAssetMenu(fileName = "DialogueEvent", menuName = "Calakarma/DialogueEvent")]
 public class DialogueEvent : ScriptableObject
 {
     public virtual void onEvent() {

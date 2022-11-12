@@ -36,16 +36,24 @@ public class PlayerStats : MonoBehaviour
     private float stealthTimestamp = 0.0f;
     public float stealthRegenerationRate = 0.1f;
 
-    [Header("Charge Settings")]
+    [Header("Combo Settings")]
     
-    public float maxCharge;
-    [SerializeField]
-    private int charge;
-    public bool charged;
-    private float chargeTimestamp = 0.0f;
-    public float chargeRate = 0.1f;
+    // public float maxCharge;
+    // [SerializeField]
+    // private int charge;
+    // public bool charged;
+    // private float chargeTimestamp = 0.0f;
+    // public float chargeRate = 0.1f;
 
-    public bool charging;
+    // public bool charging;
+
+    public float maxCombo;
+    [SerializeField]
+    private int combo;
+    public bool comboReady;
+
+    private float comboTimestamp = 0.0f;
+    public float comboRate = 0.1f;
 
     [Header("Dash Settings")]
     
@@ -141,7 +149,7 @@ public class PlayerStats : MonoBehaviour
     {
         updateMana();
         updateStealth();
-        updateCharge();
+        updateCombo();
         updateHealth();
         updateDash();
 
@@ -185,7 +193,7 @@ public class PlayerStats : MonoBehaviour
             specialBar.setWeaponDamageType(WeaponData.WeaponDamageType.Classless);
         }
         
-        if(weaponDamageType == WeaponData.WeaponDamageType.Melee)    specialBar.changeAmount(charge/(float)maxCharge);
+        if(weaponDamageType == WeaponData.WeaponDamageType.Melee)    specialBar.changeAmount(combo/(float)maxCombo);
         if(weaponDamageType == WeaponData.WeaponDamageType.Ranged)    specialBar.changeAmount(stealth/(float)maxStealth);
         if(weaponDamageType == WeaponData.WeaponDamageType.Magic)    specialBar.changeAmount(overload/(float)maxOverload);
     }
@@ -242,25 +250,43 @@ public class PlayerStats : MonoBehaviour
     }
 
     // Updates Charge System
-    private void updateCharge() {
-        Item equipped = (Player.Instance.playerCombat.getEquipped());
-        if(equipped!=null) {
-            if(((WeaponData)(equipped.getItemData())).weaponType == WeaponData.WeaponType.Sword) {
-                SwordData sword = ((SwordData)((WeaponData)(Player.Instance.playerCombat.getEquipped().getItemData())));
-                maxCharge = (sword.charge100PercentSpeed+sword.chargeSpeed)*10;
-            }
+    // private void updateCharge() {
+        // Item equipped = (Player.Instance.playerCombat.getEquipped());
+        // if(equipped!=null) {
+        //     if(((WeaponData)(equipped.getItemData())).weaponType == WeaponData.WeaponType.Sword) {
+        //         SwordData sword = ((SwordData)((WeaponData)(Player.Instance.playerCombat.getEquipped().getItemData())));
+        //         maxCharge = (sword.charge100PercentSpeed+sword.chargeSpeed)*10;
+        //     }
+        // }
+
+        // if(Time.time > chargeTimestamp)  {
+        //     chargeTimestamp = Time.time+chargeRate;
+        //     if(charge<maxCharge && charging)    charge++;
+        // }
+
+        // if(charge >= maxCharge) {
+        //     charged = true;
+        // } else {
+        //     charged = false;
+        // }
+    // }
+
+    private void updateCombo() {
+        if(Time.time > comboTimestamp)  {
+            comboTimestamp = Time.time+comboRate;
+            if(combo > 0) combo --;
         }
 
-        if(Time.time > chargeTimestamp)  {
-            chargeTimestamp = Time.time+chargeRate;
-            if(charge<maxCharge && charging)    charge++;
-        }
-
-        if(charge >= maxCharge) {
-            charged = true;
+        if(combo >= maxCombo) {
+            comboReady = true;
         } else {
-            charged = false;
+            comboReady = false;
         }
+    }
+
+    public void addCombo(int x) {
+        combo += x;
+        comboTimestamp = Time.time+comboRate;
     }
 
     // Resets Overload System. Called After Overloaded Shot
@@ -276,9 +302,9 @@ public class PlayerStats : MonoBehaviour
     }
 
     // Resets Charge System
-    public void resetCharge() {
-        charge = 0;
-        charged = false;
+    public void resetCombo() {
+        combo = 0;
+        comboReady = false;
     }
 
     // Resets Dash System

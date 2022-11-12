@@ -12,10 +12,10 @@ public class SwordData : WeaponData
     public float hitRad = 0.5f;
     
     public float charge100PercentSpeed;
-    public int chargeDamage;
+    public int comboDamage;
 
     // Use Sword Attack
-    public void onAttack(bool charged, LayerMask enemyLayer, Transform swordPoint, Item equippedWeapon) {
+    public void onAttack(bool combo, LayerMask enemyLayer, Transform swordPoint, Item equippedWeapon) {
         swordPoint.localPosition = new Vector2(((SwordData)(equippedWeapon.getItemData())).reach, Player.Instance.transform.position.y+0.167f); // Moves Scan Radius To Correct Spot
 
         Collider2D[] hits = Physics2D.OverlapCircleAll(swordPoint.position, 
@@ -24,12 +24,20 @@ public class SwordData : WeaponData
         foreach(Collider2D collider in hits) { // Loops Through Each Hit Object And Applies Damage
             Enemy e = collider.gameObject.GetComponent<Enemy>();
             if(e!=null) {
-                if(!charged) // Applies Appropriate Damage
+                if(!combo) // Applies Appropriate Damage
                     e.takeDamage((int)(damage*(1+((float)Player.Instance.playerStats.getStatBonus("damagepercent"))/100)));
                 else
-                    e.takeDamage((int)(chargeDamage*(1+((float)Player.Instance.playerStats.getStatBonus("damagepercent"))/100)));
+                    e.takeDamage((int)(comboDamage*(1+((float)Player.Instance.playerStats.getStatBonus("damagepercent"))/100)));
+
+                
 
                 playerMementoEffects(collider);
+
+                if(!combo) {
+                    Player.Instance.playerStats.addCombo(1);
+                } else {
+                    Player.Instance.playerStats.resetCombo();
+                }
             }
         }
     }

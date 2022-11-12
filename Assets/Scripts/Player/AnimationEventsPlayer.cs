@@ -47,13 +47,15 @@ public class AnimationEventsPlayer : MonoBehaviour
 
     // Code Reads Attack As Done
     public void finishAttack() {
-        Player.Instance.playerCombat.chargingAttack = false;
+        if (!ControlBinds.GetButton("Attack")) // Checks For Attacks
+        {
+            Player.Instance.playerCombat.chargingAttack = false;
+        }
     }
 
     // Resets Charge System
-    public void resetCharge() {
-        Player.Instance.playerStats.resetCharge();
-        Player.Instance.playerStats.charging = false;
+    public void resetCombo() {
+        Player.Instance.playerStats.resetCombo();
     }
 
     // Resets Speed Mid Animation
