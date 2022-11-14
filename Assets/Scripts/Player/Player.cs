@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
     public void Awake()
     {
         if(respawnScene == null) {
-            respawnScene = "Outskirts_1";
+            respawnScene = "Outskirts_0";
         }
 
         if(_instance != null && _instance != this) {

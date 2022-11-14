@@ -601,7 +601,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6458431971110045998, guid: 068694e1173eefa44b10edfb951afa71, type: 3}
       propertyPath: entranceNames.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6458431971110045998, guid: 068694e1173eefa44b10edfb951afa71, type: 3}
       propertyPath: destroyables.Array.data[0]
@@ -665,7 +665,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6458431971110045998, guid: 068694e1173eefa44b10edfb951afa71, type: 3}
       propertyPath: entrancePositions.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6458431971110045998, guid: 068694e1173eefa44b10edfb951afa71, type: 3}
       propertyPath: entrancePositions.Array.data[2]

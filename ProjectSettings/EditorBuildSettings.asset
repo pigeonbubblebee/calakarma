@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Save_Slots.unity
     guid: 7cbfbda65a844ba47bc23dd6108bf198
   - enabled: 1
+    path: Assets/Scenes/Outskirts/Outskirts_0.unity
+    guid: 826f957724d7bd443aff781d32c681d4
+  - enabled: 1
     path: Assets/Scenes/Outskirts/Outskirts_1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -30,9 +33,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Outskirts/Outskirts_Bear_Cave.unity
     guid: b5ee0d113610ecb449411a1d553758f3
   - enabled: 1
-    path: Assets/Scenes/Castle/Tutorial/tutorial_1.unity
+    path: Assets/Scenes/Castle/Tutorial/tutorial_0.unity
     guid: 7ec0cbf877cdd9e438549d548856ffd0
   - enabled: 1
-    path: Assets/Scenes/Castle/Tutorial/tutorial_2.unity
+    path: Assets/Scenes/Castle/Tutorial/tutorial_1.unity
     guid: 7c814b89c1c2caf439b5d5f2d27da103
   m_configObjects: {}

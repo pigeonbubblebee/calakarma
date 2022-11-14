@@ -19,8 +19,8 @@ public class TutorialPlayerDeath : MonoBehaviour
             triggered = true;
         }
 
-        if(voidBall.getHealth() <= 100) {
-            voidBall.unconditionalHealthChange(900);
+        if(voidBall.getHealth() <= 200) {
+            voidBall.unconditionalHealthChange(800);
         }
     }
 }
