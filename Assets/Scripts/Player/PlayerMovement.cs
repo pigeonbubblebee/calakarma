@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float moveSpeed;
     public float jumpForce;
+    public float gravityForce;
 
     private bool jumping = false;
     private bool dashing = false;
@@ -156,6 +157,8 @@ public class PlayerMovement : MonoBehaviour
         if(jumping) { // Handles Jumping
             rb.velocity = new Vector2(rb.velocity.x, jumpForce*10f);
             // jumpCount--;
+        } else {
+            // rb.velocity = new Vector2(rb.velocity.x, -gravityForce*10f);
         }
         if(dashing) { // Handles Dashing
             rb.AddForce(new Vector2(Player.Instance.playerStats.dashSpeed*100f*moveDirectionNonZero, 0f));

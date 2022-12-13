@@ -516,6 +516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 6
   jumpForce: 0.5
+  gravityForce: 0.9
   playerSprite: {fileID: 2513005980949317373}
   weaponSprite: {fileID: 4133343555819200921}
   ceilingCheck: {fileID: 2513005982730744021}
