@@ -106,6 +106,10 @@ public class PlayerMovement : MonoBehaviour
             jumping = false;
         }
 
+        if(ControlBinds.GetButtonUp("Jump") && rb.velocity.y > 0) {
+            rb.velocity = new Vector2(rb.velocity.x, 0);
+        }
+
         if(ControlBinds.GetButtonDown("Dash")&&Player.Instance.playerStats.dashReady) {
             dashing = true;
             dashTimeStamp = Time.time;
